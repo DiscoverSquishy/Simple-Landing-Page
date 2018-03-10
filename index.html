@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Coming Soon</title>
+  <link rel="stylesheet" href="assets/css/master.css">
+</head>
+<!-- Please note that the background is hosted on my website's CDN (Content Delivery Network). Therefore it's fast and has unlimited bandwidth.
+You can simple change the background by linking it to a img file either by a website link or a file located on your web server. -->
+<body background="https://discoversquishy.me/background.jpg">
+  <center>
+      <div class="welcome">
+<!-- Please do change the image below to whatever you desire.
+I do not take any credit for that image it's a simple UI face  -->
+      <img class="profile" width="250" src="https://pbs.twimg.com/profile_images/874417950/003-2-square_400x400.jpg" alt="pfp">
+      <h1> Welcome to my website. Right under this is a simple timer to when my real website is going to launch :)</h1>
+      </div>
+    </center>
+    <p id="parge"></p>
+    <script>
+      // This is automatically set to "EXPIRED" you need change the line under this to make it countdown to a certain date.
+      var countDownDate = new Date("Mar 20, 2018 15:37:25").getTime();
+      // The line above this comment is where you need to edit the countdown date.
+      // THE LINE UNDER THIS IS EASILY BREAKABLE IF YOU MESS WITH IT.
+      var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("parge").innerHTML = days + "d " + hours + "h " +
+          minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+          clearInterval(x);
+          // To change the text to when the countdown expires edit the line that says EXPIRED in this case the line right under this comment
+          document.getElementById("parge").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
+  </div>
+
+  <footer>
+    <div class="container">
+      <center>
+      <a>Created with 💙 by <a href="https://twitter.com/DiscoverSquishy" target="_blank">DiscoverSquishy</a>&nbsp;</p></a>
+    </center>
+    </div>
+  </footer>
+</body>
+
+</html>
